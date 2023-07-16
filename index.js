@@ -7,6 +7,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+
+app.get("/",(req,res)=>{
+res.send("Api is there")
+})
 app.post("/login", async (req, res) => {
   if (req.body.email && req.body.password) {
     let user = await Login.findOne(req.body);
